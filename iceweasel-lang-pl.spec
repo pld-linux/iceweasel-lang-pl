@@ -7,7 +7,7 @@ Summary:	Polish resources for Iceweasel
 Summary(pl.UTF-8):	Polskie pliki językowe dla Iceweasel
 Name:		iceweasel-lang-%{_lang}
 Version:	3.0.1
-Release:	1
+Release:	2
 License:	MPL 1.1 or GPL v2+ or LGPL v2.1+
 Group:		I18n
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/%{_lang}.xpi
@@ -61,6 +61,15 @@ rm -f locale/branding/brand.dtd locale/branding/brand.properties \
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+cat << 'EOF'
+NOTE: You must also change your default useragent locale:
+  Open Iceweasel and type in URL: "about:config" then
+  find "general.useragent.locale" and change value
+  to "pl-PL" then restart Iceweasel.
+
+EOF
 
 %files
 %defattr(644,root,root,755)

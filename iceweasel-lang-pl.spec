@@ -4,7 +4,7 @@
 #
 %define		_lang		pl
 Summary:	Polish resources for Iceweasel
-Summary(pl.UTF-8):	Polskie pliki językowe dla Iceweasel
+Summary(pl.UTF-8):	Polskie pliki językowe dla Iceweasela
 Name:		iceweasel-lang-%{_lang}
 Version:	3.0.5
 Release:	1
@@ -29,7 +29,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Polish resources for Iceweasel.
 
 %description -l pl.UTF-8
-Polskie pliki językowe dla Iceweasel.
+Polskie pliki językowe dla Iceweasela.
 
 %prep
 

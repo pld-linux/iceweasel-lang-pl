@@ -6,12 +6,12 @@
 Summary:	Polish resources for Iceweasel
 Summary(pl.UTF-8):	Polskie pliki językowe dla Iceweasela
 Name:		iceweasel-lang-%{_lang}
-Version:	3.0.10
+Version:	3.0.11
 Release:	1
 License:	MPL 1.1 or GPL v2+ or LGPL v2.1+
 Group:		I18n
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/%{_lang}.xpi
-# Source0-md5:	b4b029edee6f82cb80ebbae12cf98b9e
+# Source0-md5:	d41f2f2d9ddbc9f01a4e4b2f96a109ee
 URL:		http://www.firefox.pl/
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip

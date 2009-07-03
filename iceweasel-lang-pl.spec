@@ -45,19 +45,14 @@ mv -f $RPM_BUILD_ROOT%{_libdir}/*.rdf $RPM_BUILD_ROOT%{_iceweaseldir}/defaults/p
 # rebrand locale for iceweasel
 cd $RPM_BUILD_ROOT%{_chromedir}
 unzip pl-PL.jar locale/branding/brand.dtd locale/branding/brand.properties \
-	locale/browser/appstrings.properties locale/browser/aboutDialog.dtd
+	locale/browser/appstrings.properties
 sed -i -e 's/Mozilla Firefox/Iceweasel/g; s/Firefox/Iceweasel/g;' \
 	locale/branding/brand.dtd locale/branding/brand.properties
 sed -i -e 's/Firefox/Iceweasel/g;' locale/browser/appstrings.properties
-grep -e '\<ENTITY' locale/browser/aboutDialog.dtd \
-	> locale/browser/aboutDialog.dtd.new
-sed -i -e '/copyrightInfo/s/^\(.*\)\..*Firefox.*/\1\./g; s/\r//g; /copyrightInfo/s/$/" >/g;' \
-	locale/browser/aboutDialog.dtd.new
-mv -f locale/browser/aboutDialog.dtd.new locale/browser/aboutDialog.dtd
 zip -0 pl-PL.jar locale/branding/brand.dtd locale/branding/brand.properties \
-	locale/browser/appstrings.properties locale/browser/aboutDialog.dtd
+	locale/browser/appstrings.properties
 rm -f locale/branding/brand.dtd locale/branding/brand.properties \
-	locale/browser/appstrings.properties locale/browser/aboutDialog.dtd
+	locale/browser/appstrings.properties
 
 %clean
 rm -rf $RPM_BUILD_ROOT
